@@ -64,14 +64,13 @@ const copyButtons = document.getElementsByClassName("Copy_button");
 for (let button of copyButtons) {
     button.addEventListener("click", function() {
     const phone = this.closest(".shadow-lg").querySelector("h2").innerText;
-  navigator.clipboard.writeText(phone).then(() => {
+      navigator.clipboard.writeText(phone).then(() => {
       copyCount++;
       copyStatuss.innerText = copyCount; // update top counter
+      alert("Copied: " + phone);
     }).catch(err => {
       console.error("Copy failed", err);
     });
   });
 }
-
-
 
